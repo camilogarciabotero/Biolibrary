@@ -3,4 +3,4 @@
 ***
 
 # Biolibray
-This repo contains some code and scripts I've developed for bioinformatics tasks
+This repo contains some code and scripts I've developed for bioinformatics tasks. In the coming future I'll be adding some other scripts.
