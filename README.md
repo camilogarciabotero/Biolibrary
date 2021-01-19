@@ -1,5 +1,5 @@
 
-1;95;0c[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3937407.svg)](https://doi.org/10.5281/zenodo.3937407)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3937407.svg)](https://doi.org/10.5281/zenodo.3937407)
 
 ***
 
