@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 
 import argparse
+import sys
 import gb_io
 from rich import print
 
@@ -14,12 +15,14 @@ def get_arguments():
     args = parser.parse_args()
 
     return(args)
-
-input = args.input
-protein = args.protein
-output = open(args.output, "w")
-
+    
 def main():
+    args = get_arguments()  
+
+    input = args.input
+    protein = args.protein
+    output = open(args.output, "w")
+
     with open(output, "w") as out:
         for record in gb_io.iter(input):
             for feature in filter(lambda feat: feat.type == "CDS", record.features):
