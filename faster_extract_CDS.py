@@ -27,7 +27,7 @@ def main():
         for record in gb_io.iter(input):
             for feature in filter(lambda feat: feat.type == "CDS", record.features):
                 qualifiers = feature.qualifiers.to_dict()
-                if protein in qualifiers["gene"][0]:
+                if protein in qualifiers["CDS"][0]:
                     start = feature.location.start.position + 1
                     end = feature.location.end.position
                     pos = [start, end] 
