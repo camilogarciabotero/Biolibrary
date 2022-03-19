@@ -21,7 +21,7 @@ def main():
 
     input = args.input
     protein = args.protein
-    output = open(args.output, "w")
+    output = args.output
 
     with open(output, "w") as out:
         for record in gb_io.iter(input):
