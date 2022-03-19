@@ -15,7 +15,7 @@ def get_arguments():
     args = parser.parse_args()
 
     return(args)
-    
+
 def main():
     args = get_arguments()  
 
@@ -27,11 +27,11 @@ def main():
         for record in gb_io.iter(input):
             for feature in filter(lambda feat: feat.type == "CDS", record.features):
                 qualifiers = feature.qualifiers.to_dict()
-                if protein in qualifiers["locus_tag"][0]:
+                if protein in qualifiers["gene"][0]:
                     start = feature.location.start.position + 1
                     end = feature.location.end.position
                     pos = [start, end] 
-                    out.write(">{}\n".format(qualifiers["locus_tag"][0]))
+                    out.write(">{}\n".format(qualifiers["gene"][0]))
                     out.write("{}\n".format(qualifiers["translation"][0]))
 
 
