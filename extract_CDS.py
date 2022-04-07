@@ -17,7 +17,7 @@ parser.add_argument('-p', '--protein', type=str,
                         help='Give a protein name or at least words that may match part of its complete name (it also finds the abreviation)')
 
 
-parser.add_argument('-o', '--output', default="CDS", help="Output a multfasta file", action="store")
+parser.add_argument('-o', '--output', default="CDS.faa", help="Output a multfasta file", action="store")
     
 args = parser.parse_args()
 
