@@ -1,5 +1,7 @@
 #!/usr/bin/env python
 
+### This script was based on the StackExchange discussion here https://bioinformatics.stackexchange.com/questions/18119/updating-the-gff3-fasta-to-genebank-code 
+
 import argparse
 from Bio import SeqIO
 from BCBio import GFF
