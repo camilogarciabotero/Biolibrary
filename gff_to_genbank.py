@@ -24,8 +24,10 @@ def convert(fasta_input, gff_input, gbk_output):
         fasta_handler = SeqIO.to_dict(SeqIO.parse(fasta_input, "fasta"))
         for record in GFF.parse(gff_input, fasta_handler):
             for feature in record.features:
-                translation = Seq.translate(record.seq[feature.location.start.position:feature.location.end.position], to_stop=True, table=11)
-                feature.qualifiers.update({'translation': translation})
+                if feature.strand == 1:
+                    feature.qualifiers.update({'translation': Seq.translate(record.seq[feature.location.start.position:feature.location.end.position], to_stop=True)})
+                else:
+                    feature.qualifiers.update({'translation': Seq.translate(record.seq[feature.location.start.position:feature.location.end.position].reverse_complement(), to_stop=True)})
             record.annotations["molecule_type"] = "DNA"
             SeqIO.write(record, gbk_handler, "genbank")
 
